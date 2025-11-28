@@ -9,5 +9,5 @@ jobs:
 
     steps:
       uses: actions/checkout@v3
-      names: All test
+      name: All test
       run: bash -xv ./test.bash
