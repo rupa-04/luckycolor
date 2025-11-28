@@ -2,29 +2,31 @@
 
 set -e
 
-COLORS=$(grep -E "COLORS\s*=" main.py | sed -E 's/.*=\s*//')
+COLORS=$(awk '/COLORS *= *\[/,/\]/' main.py | sed -E 's/.*COLORS *= *//' | tr -d '\n')
 
 get_color(){
 	local n="$1"
-	python - <<EOF
+	python3 - <<EOF
 import sys, ast
-colors = ast.literal_eval($COLORS)
-idx = $n % len(colors)
-print(colors[idx])
+colors = ast.literal_eval('$COLORS')
+name, hexcode = colors[$n % len(colors)]
+print(name, hexcode)
 EOF
 }
 
 run_cmd(){
-	echo -n "$2" | python main.py "${@:3}"
+	local opts="$1"
+	local input="$2"
+	echo -n "$input" | python3 main.py $opts
 }
 
 echo "Loaded COLORS from main.py: $COLORS"
 
-expected=$(get_color 5)
+read expected_name expected_hex <<<"$(get_color 5)"
 out=$(run_cmd "" "5")
 
-if [ "$out" != "$expected" ]; then
-	echo "Test basic FAILED: expected '$expected' but got '$out'"
+if [ "$out" != "$expected_name" ]; then
+	echo "Test basic FAILED: expected '$expected_name' but got '$out'"
 	exit 1
 else
 	echo "Test basic PASSED"
@@ -33,8 +35,8 @@ fi
 
 out=$(run_cmd "-x" "5")
 
-if [[ "$out" != \#* ]]; then
-	echo "Test hex FAILED: expected a hex color (starting with #) but got '$out'"
+if [ "$out" != "$expected_hex" ]; then
+	echo "Test hex FAILED: expected '$expected_hex' but got '$out'"
 	exit 1
 else
 	echo "Test hex PASSED"
@@ -42,10 +44,12 @@ fi
 
 
 out=$(run_cmd "-v" "3")
+read name3 hex3 <<<"$(get_color 3)"
 
-lower_out=$(echo "$out" | tr '[:upper:]' '[:lower:]')
-if [[ "$lower_out" != *"lucky color"* ]]; then
-	echo "Test verbose FAILED: missing 'lucky color' in output"
+if [[ "$out" != *"$name3"* ]] || [[ "$out" != *"$hex3"* ]]; then
+	echo "verbose FAILED:"
+	echo "expected message to include '$name3' and '$hex3'"
+	echo "but got: $out"
 	exit 1
 else
 	echo "Test verbose PASSED"
