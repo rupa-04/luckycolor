@@ -47,7 +47,7 @@ def main(argv=None):
     data = sys.stdin.read().strip()
 
     if not data.isdigit():
-        print("Please input a number.", file=sys.stderr)
+        print("整数を入力してください", file=sys.stderr)
         sys.exit(1)
 
     num = int(data)
