@@ -1,4 +1,4 @@
-# luckycolor
+# ラッキーカラー
 ![test](https://github.com/rupa-04/luckycolor/actions/workflows/test.yml)
 
 luckycolorは、標準入力で受け取った数字を元に、「ラッキーカラー」を計算して出力します。
@@ -40,6 +40,35 @@ $ echo 5 | ./luckycolor.py -x
 ```
 $ echo 3 | ./luckycolor.py -v
 あなたのラッキーカラーはyellow(#ffd60a)です。
+```
+
+## カラーリスト
+luckycolor.py内のCOLORSで定義されています。
+```
+index/name/hex
+0/red/#ff4b4b
+1/blue/#4b6aff
+2/green/#34c759
+3/yellow/#ffd60a
+4/purple/#a64bff
+5/orange/#ff9500
+6/pink/#ff2d55
+7/black/#000000
+8/white/#ffffff
+9/gold/#ffd700
+10/silver/#c0c0c0
+11/cyan/#00ffff
+12/magenta/#ff00ff
+13/lime/#bfff00
+14/navy/#000080
+15/teal/#008080
+16/maroon/#800000
+17/olive/#808000
+18/brown/#8b4513
+19/skyblue/#87ceeb
+20/beige/#f5f5dc
+21/coral/#ff7f50
+22/salmon/#fa8072
 ```
 
 ## 必要なソフトウェア
