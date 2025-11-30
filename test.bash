@@ -47,12 +47,12 @@ out=$(run_cmd "-v" "3")
 read name3 hex3 <<<"$(get_color 3)"
 
 if [[ "$out" != *"$name3"* ]] || [[ "$out" != *"$hex3"* ]]; then
-	echo "三つ目のverboseによるメッセージ表示のテストが失敗しました。"
+	echo "三つ目のメッセージ表示のテストが失敗しました。"
 	echo "予想されたメッセージと'$name3'と'$hex3'"
 	echo "の表示でしたが、'$out'と出ました。"
 	exit 1
 else
-	echo "三つ目のverboseによるメッセージ表示のテストが成功しました。"
+	echo "三つ目のメッセージ表示のテストが成功しました。"
 fi
 
 
