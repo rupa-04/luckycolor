@@ -20,26 +20,26 @@ run_cmd(){
 	echo -n "$input" | python3 luckycolor.py $opts
 }
 
-echo "Loaded COLORS from luckycolor.py: $COLORS"
+echo "luckycolor.py: $COLORS から読み込みます。"
 
 read expected_name expected_hex <<<"$(get_color 5)"
 out=$(run_cmd "" "5")
 
 if [ "$out" != "$expected_name" ]; then
-	echo "Test basic FAILED: expected '$expected_name' but got '$out'"
+	echo "最初のテストが失敗しました。'$expected_name'の予想でしたが、'$out'と出ました。"
 	exit 1
 else
-	echo "Test basic PASSED"
+	echo "最初のテストが成功しました。"
 fi
 
 
 out=$(run_cmd "-x" "5")
 
 if [ "$out" != "$expected_hex" ]; then
-	echo "Test hex FAILED: expected '$expected_hex' but got '$out'"
+	echo "二つ目のhexコードのテストが失敗しました。'$expected_hex'の予想でしたが、'$out'と出ました。"
 	exit 1
 else
-	echo "Test hex PASSED"
+	echo "二つ目のhexコードのテストが成功しました。"
 fi
 
 
@@ -47,13 +47,13 @@ out=$(run_cmd "-v" "3")
 read name3 hex3 <<<"$(get_color 3)"
 
 if [[ "$out" != *"$name3"* ]] || [[ "$out" != *"$hex3"* ]]; then
-	echo "verbose FAILED:"
-	echo "expected message to include '$name3' and '$hex3'"
-	echo "but got: $out"
+	echo "三つ目のverboseによるメッセージ表示のテストが失敗しました。"
+	echo "予想されたメッセージと'$name3'と'$hex3'"
+	echo "の表示でしたが、'$out'と出ました。"
 	exit 1
 else
-	echo "Test verbose PASSED"
+	echo "三つ目のverboseによるメッセージ表示のテストが成功しました。"
 fi
 
 
-echo "All tests PASSED successfully!"
+echo "すべてのテストに成功しました!"
