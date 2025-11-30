@@ -14,17 +14,23 @@ luckycolorは、標準入力で受け取った数字を元に、「ラッキー�
 
 ## 使い方
 - ダウンロード
+
 '''
-git clone https://github.com/rupa-04/luckycolor
+$ git clone https://github.com/rupa-04/luckycolor
 '''
+
 - インストール
+
 '''
-cd luckycolor/
+$ cd luckycolor/
 '''
+
 - 実行方法
+
 '''
-chmod +x luckycolor.py test.bash
-''' 
+$ chmod +x luckycolor.py test.bash
+'''
+ 
 
 ## 必要なソフトウェア
 - Python
