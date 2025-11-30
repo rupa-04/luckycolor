@@ -29,15 +29,17 @@ $ chmod +x luckycolor.py test.bash
 数字を標準入力で渡します。
 ```
 $ echo 5 | ./luckycolor.py
-# → orange
+orange
 ``` 
 - HEXコードで出力
 ```
 $ echo 5 | ./luckycolor.py -x
+#ff9500
 ```
 -メッセージ付きでの出力
 ```
 $ echo 3 | ./luckycolor.py -v
+あなたのラッキーカラーはyellow(#ffd60a)です。
 ```
 
 ## 必要なソフトウェア
