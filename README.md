@@ -1,9 +1,9 @@
 # luckycolor
-![test](https://github.com/rupa-04/luckycolor/actions/workflows/test.yml)
+![test](.github/workflows/test.yml)
 
 luckycolorは、標準入力で受け取った数字を元に、「ラッキーカラー」を計算して出力します。
 色名・HEXコード・メッセージといった複数の出力形式に対応しています。
-日常生活で色選びに迷った際に、
+日常生活で色選びに迷った際に、アイデアの一つになると思います。
 
 ## 何をするためのソフトか
 - 入力された数字(整数)を元に、定義されたCOLOORリストから**数字 % 色数**の位置にあるカラーを選びます。
@@ -14,11 +14,17 @@ luckycolorは、標準入力で受け取った数字を元に、「ラッキー�
 
 ## 使い方
 - ダウンロード
-'''git clone https://github.com/rupa-04/luckycolor'''
+'''
+git clone https://github.com/rupa-04/luckycolor
+'''
 - インストール
-'''cd luckycolor/'''
+'''
+cd luckycolor/
+'''
 - 実行方法
-'''chmod +x luckycolor.py test.bash''' 
+'''
+chmod +x luckycolor.py test.bash
+''' 
 
 ## 必要なソフトウェア
 - Python
