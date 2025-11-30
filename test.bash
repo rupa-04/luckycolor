@@ -1,4 +1,7 @@
 #!/bin/bash
+#SPDX-FileCopyrightText: 2025 rupa-04
+#SPDX-License-Identifier: BSD-3-Clause
+
 
 set -e
 
