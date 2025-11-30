@@ -15,7 +15,21 @@ COLORS = [
         ("pink", "#ff2d55"),
         ("black", "#000000"),
         ("white", "#ffffff"),
-        ("gold", "ffd700"),
+        ("gold", "#ffd700"),
+        ("silver", "#c0c0c0"),
+        ("cyan", "#00ffff"),
+        ("magenta", "#ff00ff"),
+        ("lime", "#bfff00"),
+        ("navy", "#000080"),
+        ("teal", "#008080"),
+        ("maroon", "#800000"),
+        ("olive", "#808000"),
+        ("brown", "#8b4513"),
+        ("skyblue", "#87ceeb"),
+        ("violet", "#ee82ee"),
+        ("beige", "#f5f5dc"),
+        ("coral", "#ff7f50"),
+        ("salmon", "#fa8072")
 ]
 
 def parse_args(argv):
@@ -40,7 +54,7 @@ def main(argv=None):
     name, hexcode = compute_color(num)
 
     if args.verbose:
-        print(f"Your lucky color is {name}({hexcode}).Today is a good day!")
+        print(f"あなたのラッキーカラーは {name}({hexcode})です。")
         return
 
     print(hexcode if args.hex else name)
