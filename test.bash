@@ -2,7 +2,7 @@
 
 set -e
 
-COLORS=$(awk '/COLORS *= *\[/,/\]/' main.py | sed -E 's/.*COLORS *= *//' | tr -d '\n')
+COLORS=$(awk '/COLORS *= *\[/,/\]/' luckycolor.py | sed -E 's/.*COLORS *= *//' | tr -d '\n')
 
 get_color(){
 	local n="$1"
@@ -17,10 +17,10 @@ EOF
 run_cmd(){
 	local opts="$1"
 	local input="$2"
-	echo -n "$input" | python3 main.py $opts
+	echo -n "$input" | python3 luckycolor.py $opts
 }
 
-echo "Loaded COLORS from main.py: $COLORS"
+echo "Loaded COLORS from luckycolor.py: $COLORS"
 
 read expected_name expected_hex <<<"$(get_color 5)"
 out=$(run_cmd "" "5")
