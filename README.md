@@ -30,7 +30,7 @@ orange
 $ echo 5 | ./luckycolor.py -x
 #ff9500
 ```
--メッセージ付きでの出力
+- メッセージ付きでの出力
 ```
 $ echo 3 | ./luckycolor.py -v
 あなたのラッキーカラーはyellow(#ffd60a)です。
