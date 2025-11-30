@@ -1,5 +1,5 @@
 # luckycolor
-![test](.github/workflows/test.yml)
+![test](https://github.com/rupa-04/luckycolor/actions/workflows/test.yml)
 
 luckycolorは、標準入力で受け取った数字を元に、「ラッキーカラー」を計算して出力します。
 色名・HEXコード・メッセージといった複数の出力形式に対応しています。
@@ -25,6 +25,20 @@ $ cd luckycolor/
 ```
 $ chmod +x luckycolor.py test.bash
 ``` 
+- 主な使い方
+数字を標準入力で渡します。
+```
+$ echo 5 | ./luckycolor.py
+# → orange
+``` 
+- HEXコードで出力
+```
+$ echo 5 | ./luckycolor.py -x
+```
+-メッセージ付きでの出力
+```
+$ echo 3 | ./luckycolor.py -v
+```
 
 ## 必要なソフトウェア
 - Python
