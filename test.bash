@@ -33,6 +33,14 @@ out=$(echo | ./luckycolor 2>/dev/null)
 [ "$?" -ne 0 ] || ng "$LINENO"
 [ "$out" = "" ] || ng "$LINENO"
 
+out=$(echo 3.14 | ./luckycolor 2>/dev/null)
+[ "$?" -ne 0 ] || ng "$LINENO"
+[ "$out" = "" ] || ng "$LINENO"
+
+out=$(echo -1 | ./luckycolor 2>/dev/null)
+[ "$?" -ne 0 ] || ng "$LINENO"
+[ "$out" = "" ] || ng "$LINENO"
+
 [ "$res" = 0 ] && echo OK
 
 exit $res
