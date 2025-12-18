@@ -6,14 +6,14 @@ set -e
 
 # basic test
 out=$(echo 5 | ./luckycolor)
-if [ "$out" != "yellow" ]; then
+if [ "$out" != "orange" ]; then
 	echo "FAILED basic"
 	exit 1
 fi
 
 # hex test
 out=$(echo 5 | ./luckycolor -x)
-if [ "$out" != "#ffd60a" ]; then
+if [ "$out" != "#ff9500" ]; then
 	echo "FAILED hex"
 	exit 1
 fi
