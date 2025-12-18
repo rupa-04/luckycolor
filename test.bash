@@ -24,19 +24,22 @@ out=$(echo 3 | ./luckycolor -v)
 [ "$?" -eq 0 ] || ng "$LINENO"
 [[ "$out" == *"あなたのラッキーカラーは"* ]] || ng "$LINENO"
 
-# not correct test
+# word test
 out=$(echo abc | ./luckycolor 2>/dev/null)
 [ "$?" -ne 0 ] || ng "$LINENO"
 [ "$out" = "" ] || ng "$LINENO"
 
+# blank test
 out=$(echo | ./luckycolor 2>/dev/null)
 [ "$?" -ne 0 ] || ng "$LINENO"
 [ "$out" = "" ] || ng "$LINENO"
 
+# decimal test
 out=$(echo 3.14 | ./luckycolor 2>/dev/null)
 [ "$?" -ne 0 ] || ng "$LINENO"
 [ "$out" = "" ] || ng "$LINENO"
 
+# negative number test
 out=$(echo -1 | ./luckycolor 2>/dev/null)
 [ "$?" -ne 0 ] || ng "$LINENO"
 [ "$out" = "" ] || ng "$LINENO"
