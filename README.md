@@ -1,5 +1,5 @@
 # ラッキーカラー
-![test](https://github.com/rupa-04/luckycolor/actions/workflows/test.yml)
+![test](https://github.com/rupa-04/luckycolor/actions/workflows/test.yml/badge.svg)
 
 luckycolorは、標準入力で受け取った数字を元に、「ラッキーカラー」を計算して出力します。
 色名・HEXコード・メッセージといった複数の出力形式に対応しています。
