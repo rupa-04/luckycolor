@@ -24,7 +24,7 @@ out=$(echo 3 | ./luckycolor -v)
 [ "$?" -eq 0 ] || ng "$LINENO"
 [[ "$out" == *"あなたのラッキーカラーは"* ]] || ng "$LINENO"
 
-# strange test
+# not correct test
 out=$(echo abc | ./luckycolor 2>/dev/null)
 [ "$?" -ne 0 ] || ng "$LINENO"
 [ "$out" = "" ] || ng "$LINENO"
