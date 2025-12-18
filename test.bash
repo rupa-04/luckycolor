@@ -2,27 +2,37 @@
 #SPDX-FileCopyrightText: 2025 rupa-04
 #SPDX-License-Identifier: BSD-3-Clause
 
-set -e
+ng () {
+	echo ${1}行目が違うよ
+	res=1
+}
+
+res=0
 
 # basic test
 out=$(echo 5 | ./luckycolor)
-if [ "$out" != "orange" ]; then
-	echo "FAILED basic"
-	exit 1
-fi
+[ "$?" -eq 0 ] || ng "$LINENO"
+[ "$out" = "orange" ] || ng "$LINENO"
 
 # hex test
 out=$(echo 5 | ./luckycolor -x)
-if [ "$out" != "#ff9500" ]; then
-	echo "FAILED hex"
-	exit 1
-fi
+[ "$?" -eq 0 ] || ng "$LINENO"
+[ "$out" != "#ff9500" ]
 
 # verbose test
 out=$(echo 3 | ./luckycolor -v)
-if [[ "$out" != *"あなたのラッキーカラーは"* ]]; then
-	echo "FAILED verbose"
-	exit 1
-fi
+[ "$?" -eq 0 ] || ng "$LINENO"
+[[ "$out" == *"あなたのラッキーカラーは"* ]] || ng "$LINENO"
 
-echo "OK"
+# strange test
+out=$(echo abc | ./luckycolor 2>/dev/null)
+[ "$?" -ne 0 ] || ng "$LINENO"
+[ "$out" = "" ] || ng "$LINENO"
+
+out=$(echo | ./luckycolor 2>/dev/null)
+[ "$?" -ne 0 ] || ng "$LINENO"
+[ "$out" = "" ] || ng "$LINENO"
+
+[ "$res" = 0 ] && echo OK
+
+exit $res
