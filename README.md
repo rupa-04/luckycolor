@@ -17,22 +17,22 @@ luckycolorは、標準入力で受け取った数字を元に、「ラッキー�
 ```
 $ git clone https://github.com/rupa-04/luckycolor
 $ cd luckycolor/
-$ chmod +x luckycolor.py test.bash
+$ chmod +x luckycolor test.bash
 ``` 
 - 主な使い方
 数字を標準入力で渡します。
 ```
-$ echo 5 | ./luckycolor.py
+$ echo 5 | ./luckycolor
 orange
 ``` 
 - HEXコードで出力
 ```
-$ echo 5 | ./luckycolor.py -x
+$ echo 5 | ./luckycolor -x
 #ff9500
 ```
 - メッセージ付きでの出力
 ```
-$ echo 3 | ./luckycolor.py -v
+$ echo 3 | ./luckycolor -v
 あなたのラッキーカラーはyellow(#ffd60a)です。
 ```
 
@@ -74,7 +74,7 @@ index/name   /hex
 
 ## テストの結果
 test.bashを実行すると、以下の項目がテストされます。
-- luclycolor.pyのCOLORSを正しく読み込めているか
+- luclycolorのCOLORSを正しく読み込めているか
 - 数字入力時の基本動作
 - HEXコード出力の動作
 - メッセージ出力の動作
