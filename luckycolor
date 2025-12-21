@@ -29,7 +29,19 @@ COLORS = [
         ("violet", "#ee82ee"),
         ("beige", "#f5f5dc"),
         ("coral", "#ff7f50"),
-        ("salmon", "#fa8072")
+        ("salmon", "#fa8072"),
+        ("gray", "#808080"),
+        ("turquoise", "#40e0d0"),
+        ("mint", "#98ff98"),
+        ("forestgreen", "#228b22"),
+        ("crimson", "#dc143c"),
+        ("burgundy", "#800020"),
+        ("indigo", "#4b0082"),
+        ("plum", "#dda0dd"),
+        ("khaki", "#f0e68c"),
+        ("tan", "#d2b48c"),
+        ("chocolate", "#d2691e"),
+        ("ivory", "#fffff0")
 ]
 
 def parse_args(argv):

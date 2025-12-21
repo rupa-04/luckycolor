@@ -39,30 +39,43 @@ $ echo 3 | ./luckycolor -v
 ## カラーリスト
 luckycolor.py内のCOLORSで定義されています。
 ```
-index/name   /hex
-0    /red    /#ff4b4b
-1    /blue   /#4b6aff
-2    /green  /#34c759
-3    /yellow /#ffd60a
-4    /purple /#a64bff
-5    /orange /#ff9500
-6    /pink   /#ff2d55
-7    /black  /#000000
-8    /white  /#ffffff
-9    /gold   /#ffd700
-10   /silver /#c0c0c0
-11   /cyan   /#00ffff
-12   /magenta/#ff00ff
-13   /lime   /#bfff00
-14   /navy   /#000080
-15   /teal   /#008080
-16   /maroon /#800000
-17   /olive  /#808000
-18   /brown  /#8b4513
-19   /skyblue/#87ceeb
-20   /beige  /#f5f5dc
-21   /coral  /#ff7f50
-22   /salmon /#fa8072
+index/name       /hex
+0    /red        /#ff4b4b
+1    /blue       /#4b6aff
+2    /green      /#34c759
+3    /yellow     /#ffd60a
+4    /purple     /#a64bff
+5    /orange     /#ff9500
+6    /pink       /#ff2d55
+7    /black      /#000000
+8    /white      /#ffffff
+9    /gold       /#ffd700
+10   /silver     /#c0c0c0
+11   /cyan       /#00ffff
+12   /magenta    /#ff00ff
+13   /lime       /#bfff00
+14   /navy       /#000080
+15   /teal       /#008080
+16   /maroon     /#800000
+17   /olive      /#808000
+18   /brown      /#8b4513
+19   /skyblue    /#87ceeb
+20   /violet     /#ee82ee
+21   /beige      /#f5f5dc
+22   /coral      /#ff7f50
+23   /salmon     /#fa8072
+24   /gray       /#808080
+25   /turquoise  /#40e0d0
+26   /mint       /#98ff98
+27   /forestgreen/#228b22
+28   /crimson    /#dc143c
+29   /burgundy   /#800020
+30   /indigo     /#4b0082
+31   /plum       /#dda0dd
+32   /khaki      /#f0e68c
+33   /tan        /#d2b48c
+34   /chocolate  /#d2691e
+35   /ivory      /#fffff0
 ```
 
 ## 必要なソフトウェア
